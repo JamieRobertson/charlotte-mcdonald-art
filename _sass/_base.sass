@@ -1,0 +1,73 @@
+// Start content
+
+
+// Sticky footer
+body
+    display: flex !important
+    flex-direction: column !important
+    height: 100vh !important
+
+
+.footer
+    margin-top: auto !important  // required for sticky layout
+
+
+// Image thumbnails
+.card-list
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    padding-left: 0
+    margin: 2rem -1.25rem 6rem
+    +media-breakpoint-up(sm)
+        flex-direction: row
+        align-items: flex-end
+
+    &__item
+        position: relative
+        display: block
+        padding: 1.25rem
+        list-style: none
+
+        .card
+            max-width: 320px
+            +media-breakpoint-up(sm)
+                max-width: 280px
+            +media-breakpoint-up(md)
+                max-width: 242px
+
+        &__image-wrapper
+            position: relative
+
+            .modal-trigger-wrapper
+                width: 100%
+                height: 100%
+                margin-bottom: 0
+
+                +hover-focus
+                    .modal-trigger
+                        opacity: 1
+
+                .modal-trigger
+                    position: absolute
+                    top: 0
+                    left: 0
+                    opacity: 0
+                    width: 100%
+                    height: 100%
+                    cursor: pointer
+                    background-color: rgba(0, 0, 0, 0.5)
+                    transition: 0.2s opacity
+
+                    small > svg
+                        width: 34px
+                        height: 34px
+                        margin-top: -17px
+                        margin-bottom: -17px
+
+
+// Not currently used
+// &__link
+//     display: block
+//     +hover-focus
+//         text-decoration: none
