@@ -2,6 +2,9 @@
 _gh_pages/
 static/raw/*
 
+# Adobe
+*.psd
+
 # Created by https://www.gitignore.io/api/sass,macos,jekyll
 # Edit at https://www.gitignore.io/?templates=sass,macos,jekyll
 
