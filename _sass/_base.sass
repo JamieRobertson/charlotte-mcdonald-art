@@ -1,4 +1,24 @@
 // Start content
+////////////////
+
+// Hide lazyloaded images if javascript is disabled
+html.no-js
+    .lazyload
+        display: none !important
+
+
+// JavaScript visibility helper class
+.no-js
+    .visible-js
+        display: none !important
+    .visible-no-js
+        display: block !important
+
+.js
+    .visible-js
+        display: block !important
+    .visible-no-js
+        display: none !important
 
 
 // Sticky footer
@@ -18,7 +38,7 @@ body
     flex-wrap: wrap
     flex-direction: column
     padding-left: 0
-    margin: 2rem -1.25rem 6rem
+    margin: 2rem -15px 6rem
     +media-breakpoint-up(sm)
         flex-direction: row
         align-items: flex-end
@@ -26,18 +46,30 @@ body
     &__item
         position: relative
         display: block
-        padding: 1.25rem
+        padding: 1.25rem 1.25rem 2.5rem
         list-style: none
+        width: 100%
+        +media-breakpoint-up(sm)
+            width: 50%
+        +media-breakpoint-up(md)
+            width: 33.333%
+        +media-breakpoint-up(xl)
+            width: 25%
 
         .card
-            max-width: 320px
-            +media-breakpoint-up(sm)
-                max-width: 280px
-            +media-breakpoint-up(md)
-                max-width: 242px
+            border: none
+            border-radius: 0
+
+        //     max-width: 320px
+        //     +media-breakpoint-up(sm)
+        //         max-width: 280px
+        //     +media-breakpoint-up(md)
+        //         max-width: 242px
 
         &__image-wrapper
             position: relative
+            border: $card-border-width solid $card-border-color
+            box-shadow: $thumbnail-box-shadow
 
             .modal-trigger-wrapper
                 width: 100%
@@ -60,10 +92,14 @@ body
                     transition: 0.2s opacity
 
                     small > svg
+                        position: absolute
+                        top: 50%
+                        left: 50%
                         width: 34px
                         height: 34px
                         margin-top: -17px
-                        margin-bottom: -17px
+                        margin-left: -17px
+                        fill: $gray-100
 
 
 // Not currently used
