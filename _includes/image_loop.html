@@ -4,9 +4,12 @@
             <div class="card">
                 <div class="card-list__item__image-wrapper">
                     <figure class="modal-trigger-wrapper">
-                        <i class="modal-trigger" data-toggle="modal" data-img="{{ site.base_url }}/static/img/2x/{{ img.src_2x }}" data-name="{{ img.title }}">
-                            <small><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg></small>
-                        </i>
+                        <i class="modal-trigger"
+                           data-toggle="modal"
+                           data-img="{{ site.base_url }}/static/img/2x/{{ img.src_2x }}"
+                           data-name="{{ img.title }}"
+                           data-description="{{ img.description }} {% if img.date %} | {{ img.date }}{% endif %}"
+                        ><small><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg></small></i>
                     </figure>
                     <img src="{{ site.base_url }}/static/img/placeholder/placeholder-gray.png"
                          data-src="{{ site.base_url }}/static/img/{{ img.src }}"

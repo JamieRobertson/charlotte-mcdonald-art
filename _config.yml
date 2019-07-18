@@ -16,13 +16,13 @@
 title: Artworks by Charlotte McDonald
 email: charlottemcdonald2@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Inspired by landscape, nature and the effects that the landscape has on today's environment, 
+  Charlotte creates both abstract and literal artworks in the form of prints and paintings that 
+  challenge the viewer to think about what is being painted and the tactile nature of the painting 
+  process.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-instagram_username: jekyllrb
+instagram_username: charlottemcdonaldart
 
 
 # Build settings

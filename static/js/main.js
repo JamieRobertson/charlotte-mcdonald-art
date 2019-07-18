@@ -5,9 +5,17 @@
         event.preventDefault();
         var $target = $(event.currentTarget);
         var $modal = $('#artworkModal');
+        var name = $target.data('name') || false;
+        var description = $target.data('description') || false;
 
         $modal.find('#modalImg').attr('src', $target.data('img'));
-        $modal.find('#modalTitle').html($target.data('name'));
+
+        if (name) {
+            $modal.find('#modalTitle').html(name);
+        };
+        if (description) {
+            $modal.find('#modalDesc').html(description);
+        };
         $modal.modal('show');
     }
 
