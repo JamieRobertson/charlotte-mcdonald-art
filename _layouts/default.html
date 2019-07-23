@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="sitemap" type="application/xml" title="Sitemap" href="" /> -->
-    <!-- <link rel="canonical" href="" /> -->
-    <link rel="stylesheet" href="{{ '/static/css/main.css' | relative_url }}" />
+    {% if jekyll.environment == "production" %}
+        <link rel="stylesheet" href="{{ '/static/build/css/main.min.css' | relative_url }}" />
+    {% else %}
+        <link rel="stylesheet" href="{{ '/static/css/main.css' | relative_url }}" />
+    {% endif %}
     <script>(function(){document.documentElement.className=document.documentElement.className.replace('no-js', 'js')})();</script>
     <title>{% if page.title %} {{ page.title }} | {% endif %}{{ site.title }}</title>
     <link rel="icon" type="image/x-icon" href="{{ '/static/img/favicon/favicon.ico' | relative_url }}">
+    <link rel="canonical" href="{{ site.url }}">
 </head>
 <body>
     <a class="skippy sr-only sr-only-focusable" href="#content">
