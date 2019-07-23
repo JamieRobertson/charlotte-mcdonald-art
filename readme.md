@@ -1,7 +1,7 @@
 Charlotte McDonald artist site
 ------------------------------
 
-[charlottemcdonaldart.com](https://charlottemcdonaldart.com/)  
+[charlottemcdonaldart.com](https://charlottemcdonaldart.com/){:target="_blank"}  
 
 A simple Jekyll site to showcase the paintings of the artist, Charlotte McDonald.  
 
