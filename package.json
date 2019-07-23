@@ -4,7 +4,7 @@
   "description": "Charlotte McDonald artist site ------------------------------",
   "main": "index.js",
   "scripts": {
-    "css-main": "npm-run-all css-compile-main css-minify-main",
+    "css-main": "npm-run-all css-compile-main css-prefix-main css-minify-main",
     "css-compile-main": "node-sass --include-path _sass/ --output-style expanded --source-map true --source-map-contents true --precision 6 static/css/main_prod.sass static/build/css/main.css",
     "css-prefix-main": "postcss --config postcss.config.js --replace \"static/build/css/*.css\" \"!static/build/css/*.min.css\"",
     "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output static/build/css/main.min.css static/build/css/main.css"
