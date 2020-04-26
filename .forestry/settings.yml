@@ -5,11 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
-  path: about.md
-  label: About
-- type: document
   path: _data/images.yml
   label: Images
+- type: document
+  path: about.md
+  label: About
 upload_dir: static/img
 public_path: "/static/img"
 front_matter_path: ''
