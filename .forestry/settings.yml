@@ -7,13 +7,6 @@ sections:
 - type: document
   path: _data/images.yml
   label: Images
-  match: "**/*"
-- type: jekyll-pages
-  label: Pages
-  create: all
-- type: jekyll-posts
-  label: Posts
-  create: all
 upload_dir: static/img/2x
 public_path: "/static/img/2x"
 front_matter_path: ''
