@@ -1,32 +1,39 @@
 <ul class="card-list">
     {% for img in site.data.images %}
-        <li class="card-list__item">
-            <div class="card">
-                <div class="card-list__item__image-wrapper">
-                    <figure class="modal-trigger-wrapper">
-                        <i class="modal-trigger"
-                           data-toggle="modal"
-                           data-img="{{ site.base_url }}/static/img/2x/{{ img.src_2x }}"
-                           data-name="{{ img.title }}"
-                           data-description="{{ img.description }} {% if img.date %} | {{ img.date }}{% endif %}"
-                        ><small><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg></small></i>
-                    
-                        <img src="{{ site.base_url }}/static/img/placeholder/placeholder-gray.png"
-                             data-src="{{ site.base_url }}/static/img/{{ img.src }}"
-                             class="img-fluid lazyload"
-                             alt="{{ img.title }}">
-                        <noscript>
-                            <img src="{{ site.base_url }}/static/img/{{ img.src }}" class="img-fluid" alt="{{ img.title }}">
-                        </noscript>
-                    </figure>
+        {% capture img_src %}{{ img.src }}{% endcapture %}
+        {% capture img_src_2x %}{{ img.src_2x }}{% endcapture %}
+
+        {% if img_src != "" or img_src_2x != "" %}
+            <li class="card-list__item">
+                <div class="card">
+                    <div class="card-list__item__image-wrapper">
+                        <figure class="modal-trigger-wrapper">
+                            <i class="modal-trigger"
+                               data-toggle="modal"
+                               data-img="{% if img_src_2x != "" %}{{ site.static_img }}{{ img_src_2x }}{% else %}{{ site.static_img }}{{ img_src }}{% endif %}"
+                               data-name="{{ img.title }}"
+                               data-description="{{ img.description }} {% if img.date %} | {{ img.date }}{% endif %}"
+                            ><small><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg></small></i>
+                        
+                            <img src="{{ site.base_url }}/static/img/placeholder/placeholder-gray.png"
+                                 data-src="{% if img_src != "" %}{{ site.static_img }}{{ img_src }}{% else %}{{ site.static_img }}{{ img_src_2x }}{% endif %}"
+                                 class="img-fluid lazyload"
+                                 alt="{{ img.title }}">
+                            <noscript>
+                                <img src="{% if img_src != "" %}{{ site.static_img }}{{ img_src }}{% else %}{{ site.static_img }}{{ img_src_2x }}{% endif %}"
+                                     class="img-fluid"
+                                     alt="{{ img.title }}">
+                            </noscript>
+                        </figure>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ img.title }}</h5>
+                        {% if img.description %}
+                            <p class="card-text small text-muted">{{ img.description }} {% if img.date %} | {{ img.date }}{% endif %}</p>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ img.title }}</h5>
-                    {% if img.description %}
-                        <p class="card-text small text-muted">{{ img.description }} {% if img.date %} | {{ img.date }}{% endif %}</p>
-                    {% endif %}
-                </div>
-            </div>
-        </li>
+            </li>
+        {% endif %}
     {% endfor %}
 </ul>

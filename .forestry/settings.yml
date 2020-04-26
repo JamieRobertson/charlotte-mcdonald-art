@@ -7,8 +7,8 @@ sections:
 - type: document
   path: _data/images.yml
   label: Images
-upload_dir: static/img/2x
-public_path: "/static/img/2x"
+upload_dir: static/img
+public_path: "/static/img"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"

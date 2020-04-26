@@ -24,6 +24,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://charlottemcdonaldart.com" # the base hostname & protocol for your site, e.g. http://example.com
 instagram_username: charlottemcdonaldart
 
+# Note: prepend this with {{ site.baseurl }} if baseurl is not blank
+static_img: "/static/img/"
 
 # Build settings
 destination: ./_gh_pages
