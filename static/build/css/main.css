@@ -7659,6 +7659,10 @@ body {
   margin-top: auto !important;
 }
 
+.footer .about-section > hr {
+  display: none;
+}
+
 .svg-inline {
   display: inline-block;
   width: 20px;

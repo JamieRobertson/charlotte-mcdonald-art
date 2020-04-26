@@ -13,6 +13,11 @@ To preview:
     $ bundle exec jekyll serve  
 ```
 
+To generate minified + autoprefixed css file for poduction:  
+``` bash
+    $ npm run css-main
+```
+
 To generate post files from yaml data (requires PyYAML and Python3):  
 ``` bash
     $ pip3 install pyyaml  
